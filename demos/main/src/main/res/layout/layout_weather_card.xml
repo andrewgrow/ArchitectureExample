@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.gahov.demo.presentation.ui.view.card.CardModel" />
+
+        <variable
+            name="presenter"
+            type="com.gahov.demo.presentation.ui.view.card.CardPresenter" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layoutWeatherCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_4"
+        app:cardCornerRadius="@dimen/radius_12"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutWeatherCardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/layoutWeatherCardIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toTopOf="@+id/layoutWeatherCardTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_min="@dimen/height_32"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:setImage="@{model.icon}"
+                app:tint="?attr/colorPrimaryVariant"
+                app:tintMode="multiply"
+                tools:src="@drawable/ic_location" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/layoutWeatherCardTitle"
+                style="@style/Weather.TextView.Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:layout_constraintBottom_toTopOf="@+id/layoutWeatherCardDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutWeatherCardIcon"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:setText="@{model.title}"
+                tools:text="@string/location_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/layoutWeatherCardDescription"
+                style="@style/Weather.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:layout_constraintBottom_toTopOf="@+id/layoutWeatherCardAccept"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/layoutWeatherCardTitle"
+                app:layout_constraintTop_toBottomOf="@+id/layoutWeatherCardTitle"
+                app:setText="@{model.description}"
+                tools:text="@string/location_permission_description" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/layoutWeatherCardAccept"
+                style="@style/Weather.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:onClick="@{() -> presenter.onCardActionPressed()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/layoutWeatherCardDescription"
+                app:layout_constraintTop_toBottomOf="@+id/layoutWeatherCardDescription"
+                app:setText="@{model.buttonTitle}"
+                tools:text="@string/location_permission_accept" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.gahov.demo.presentation.ui.location.LocationPresenter" />
+
+        <variable
+            name="model"
+            type="com.gahov.demo.presentation.ui.location.model.LocationModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/locationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/locationTitle"
+            style="@style/Weather.TextView.OnBoarding.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/location_title"
+            app:layout_constraintBottom_toTopOf="@+id/locationDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_marginTopSystemWindowInsets="@{true}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/locationDescription"
+            style="@style/Weather.TextView.OnBoarding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/location_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationTitle"
+            app:setText="@{model.currentLocation}" />
+
+        <include
+            android:id="@+id/locationWeatherCard"
+            layout="@layout/layout_weather_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationDescription"
+            app:model="@{model.locationPermission}"
+            app:presenter="@{presenter}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="error_global">Something went wrong</string>
+    <string name="about_us">About us</string>
+    <string name="location_title">Location</string>
+    <string name="location_description">Your current location is <b>%s</b>. If you want to get an accurate location, you must provide the location permission.</string>
+    <string name="location_permission_description">This is required if you want to provide the correct location.</string>
+    <string name="location_permission_accept">Request Location</string>
+</resources>

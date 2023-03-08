@@ -1,0 +1,46 @@
+<resources>
+
+    <style name="Weather.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@font/eb_garamond</item>
+    </style>
+
+    <style name="Weather.TextAppearance.Title">
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:fontFamily">@font/lobster</item>
+    </style>
+
+    <style name="Weather.TextAppearance.Button">
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="Weather.TextAppearance.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Weather.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/Weather.TextAppearance</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="Weather.TextView.Bold">
+        <item name="android:textAppearance">@style/Weather.TextAppearance.Bold</item>
+    </style>
+
+    <style name="Weather.TextView.OnBoarding">
+        <item name="android:layout_marginEnd">@dimen/margin_16</item>
+        <item name="android:layout_marginStart">@dimen/margin_16</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Weather.TextView.OnBoarding.Title">
+        <item name="android:textAppearance">@style/Weather.TextAppearance.Title</item>
+        <item name="android:layout_marginTop">@dimen/margin_16</item>
+    </style>
+
+    <style name="Weather.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/radius_16</item>
+        <item name="android:textAppearance">@style/Weather.TextAppearance.Button</item>
+    </style>
+</resources>
