@@ -22,7 +22,10 @@
                 android:value="androidx.startup" />
         </provider>
 
-        <activity android:name="com.gahov.demo.presentation.ui.main.MainActivity">
+        <activity
+            android:name="com.gahov.demo.presentation.ui.main.MainActivity"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

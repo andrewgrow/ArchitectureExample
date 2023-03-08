@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.bullet.demo.presentation"
-        minSdkVersion(21)
-        targetSdkVersion(30)
+        applicationId = "com.gahov.demo.presentation"
+        minSdk = 21
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
     }
@@ -38,11 +38,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
@@ -50,24 +50,23 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra.get("kotlinVersion") as String}")
 
-    implementation("androidx.activity:activity-ktx:1.2.0")
-    implementation("androidx.fragment:fragment-ktx:1.3.0")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.core:core-ktx:1.3.2")
+    implementation("androidx.activity:activity-ktx:1.6.1")
+    implementation("androidx.fragment:fragment-ktx:1.5.5")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.9.0")
 
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.material:material:1.8.0")
     implementation("dev.chrisbanes.insetter:insetter-dbx:0.5.0")
     implementation("dev.chrisbanes.insetter:insetter:0.5.0")
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
 
-    implementation("org.koin:koin-android:2.2.1")
-    implementation("org.koin:koin-androidx-viewmodel:2.2.1")
-    implementation("org.koin:koin-androidx-ext:2.2.1")
+    implementation("io.insert-koin:koin-android:3.3.3")
+    implementation("io.insert-koin:koin-android:3.3.3")
 
-    implementation("androidx.startup:startup-runtime:1.0.0")
+    implementation("androidx.startup:startup-runtime:1.1.1")
 
     implementation("com.squareup.picasso:picasso:2.71828")
 
