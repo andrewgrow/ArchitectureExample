@@ -29,7 +29,7 @@ open class NavComponentRouter(
                 break
             }
         }
-        navigateResId(navController.graph.startDestination)
+        navigateResId(navController.graph.startDestinationId)
     }
 
     private fun navigate(command: NavDirection) {

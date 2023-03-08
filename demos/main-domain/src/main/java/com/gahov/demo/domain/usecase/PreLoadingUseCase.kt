@@ -14,7 +14,7 @@ class PreLoadingUseCase : AsyncUseCase<OperationStatus>() {
 
     @OptIn(ExperimentalTime::class)
     override suspend fun execute(param: UseCase.Params?): Either<Failure, OperationStatus> {
-        val delay = Random.nextInt(DELAY_FROM, DELAY_UNTIL).seconds
+        val delay = Random.nextInt(DELAY_FROM, DELAY_UNTIL) * 60L
         delay(delay)
         return Either.Right(OperationStatus.SUCCESS)
     }
